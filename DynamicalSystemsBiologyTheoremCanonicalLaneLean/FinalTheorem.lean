@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicalSystemsBiologyTheoremCanonicalLaneLean.PopulationDynamics
+import HautevilleHouse.DynamicalSystemsBiologyTheoremCanonicalLaneLean.EvolutionaryGameTheory
+import HautevilleHouse.DynamicalSystemsBiologyTheoremCanonicalLaneLean.EpidemiologyModel
+import HautevilleHouse.DynamicalSystemsBiologyTheoremCanonicalLaneLean.SystemsBiologyNetwork
+import HautevilleHouse.DynamicalSystemsBiologyTheoremCanonicalLaneLean.BistabilityBifurcation
+import HautevilleHouse.DynamicalSystemsBiologyTheoremCanonicalLaneLean.SynchronizationOscillators
+
+namespace HautevilleHouse
+namespace DynamicalSystemsBiologyTheoremCanonicalLaneLean
+
+def DynamicalSystemsBiologyClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem dynamical_systems_biology_endgame (A : AdmissibleClass) :
+    DynamicalSystemsBiologyClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalSystemsBiologyTheoremCanonicalLaneLean
+end HautevilleHouse
